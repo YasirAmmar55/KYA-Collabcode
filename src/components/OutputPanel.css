@@ -1,0 +1,221 @@
+.output-panel {
+  width: 400px;
+  background-color: var(--output-bg);
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  transition: width 0.3s ease;
+}
+
+.output-panel.minimized {
+  width: 50px;
+}
+
+.output-panel.minimized .panel-header h3,
+.output-panel.minimized .panel-content {
+  display: none;
+}
+
+.panel-header {
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-header h3 {
+  color: var(--secondary);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.panel-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.panel-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--light);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.panel-btn:hover {
+  background-color: rgba(46, 204, 113, 0.3);
+  color: var(--secondary);
+}
+
+.panel-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.output-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 10px;
+}
+
+.tab-btn {
+  padding: 8px 15px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  font-size: 0.9rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  color: var(--secondary);
+}
+
+.tab-btn.active {
+  color: var(--secondary);
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--secondary);
+}
+
+.output-content-wrapper {
+  flex: 1;
+  overflow: auto;
+  padding: 15px;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  background-color: #1e1e1e;
+}
+
+.output-content {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: #d4d4d4;
+}
+
+.console-content {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.console-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.console-prompt {
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.console-input {
+  color: #d4d4d4;
+}
+
+.output-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: white;
+  display: none;
+}
+
+.panel-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 0;
+}
+
+.panel-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.panel-icon:hover {
+  background-color: rgba(46, 204, 113, 0.3);
+  color: var(--secondary);
+}
+
+/* Output content colors */
+.output-content .success {
+  color: #4caf50;
+}
+
+.output-content .error {
+  color: #f44336;
+}
+
+.output-content .warning {
+  color: #ff9800;
+}
+
+.output-content .info {
+  color: #2196f3;
+}
+
+/* Scrollbar for output */
+.output-content-wrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.output-content-wrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.output-content-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(46, 204, 113, 0.3);
+  border-radius: 4px;
+}
+
+.output-content-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(46, 204, 113, 0.5);
+}
+
+@media (max-width: 992px) {
+  .output-panel {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .output-panel {
+    width: 100%;
+    height: 250px;
+  }
+}

@@ -1,0 +1,197 @@
+.main-app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--dark);
+}
+
+.app-header {
+  background-color: var(--primary);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 100;
+}
+
+.panel-controls {
+  display: flex;
+  gap: 8px;
+  margin-right: 15px;
+}
+
+.panel-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--light);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.panel-toggle:hover {
+  background-color: rgba(46, 204, 113, 0.3);
+  color: var(--secondary);
+}
+
+.panel-toggle.active {
+  background-color: var(--secondary);
+  color: var(--dark);
+}
+
+.user-info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.user-info:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-info:hover .user-dropdown {
+  display: block;
+}
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--primary);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  min-width: 150px;
+  z-index: 1000;
+  margin-top: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(46, 204, 113, 0.2);
+}
+
+.dropdown-item i {
+  width: 16px;
+  color: var(--secondary);
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--editor-bg);
+}
+
+.app-footer {
+  padding: 8px 20px;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--success);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-wrap: wrap;
+  }
+  
+  .header-controls .btn {
+    display: none;
+  }
+  
+  .panel-controls {
+    margin-right: 0;
+  }
+  
+  .user-name {
+    display: none;
+  }
+}
+/* Add these at the END of your MainApp.css file */
+
+/* ========== 🆕 CONNECTION STATUS VARIATIONS ========== */
+.status-indicator.connected {
+  background-color: var(--success);
+  animation: pulse 2s infinite;
+}
+
+.status-indicator.disconnected {
+  background-color: var(--danger);
+  animation: none;
+}
+
+/* ========== 🆕 PARTICIPANTS COUNT BADGE ========== */
+.participants-count {
+  margin-left: 8px;
+  font-size: 11px;
+  padding: 2px 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-weight: normal;
+}
+
+/* ========== 🆕 HEADER CONTROLS LAYOUT IMPROVEMENT ========== */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ========== 🆕 CONNECTION STATUS GROUP ========== */
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin-right: 8px;
+}

@@ -1,0 +1,246 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+  padding: 20px;
+}
+
+.login-container h2 {
+  text-align: center;
+  color: var(--light);
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.login-card {
+  background-color: var(--primary);
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+  width: 850px;
+  max-width: 95%;
+  min-height: 520px;
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transition: all 0.6s ease-in-out;
+  left: 0;
+  z-index: 2;
+}
+
+.login-card.signup-mode .form-container {
+  transform: translateX(100%);
+}
+
+.form-container form {
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+.form-container h1 {
+  color: var(--secondary);
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.input-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon svg {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-icon input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.input-icon input:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.3);
+}
+
+.input-icon input.error {
+  border-color: var(--danger);
+}
+
+.error-message {
+  color: var(--danger);
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+  text-align: left;
+}
+
+.forgot-link {
+  color: var(--secondary);
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+  transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.login-card.signup-mode .overlay-container {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background: var(--accent);
+  background: linear-gradient(to right, var(--secondary), var(--accent));
+  color: var(--light);
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.login-card.signup-mode .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-left,
+.overlay-right {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.login-card.signup-mode .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.login-card.signup-mode .overlay-right {
+  transform: translateX(20%);
+}
+
+.overlay-left h1,
+.overlay-right h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.overlay-left p,
+.overlay-right p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+.login-footer {
+  background-color: var(--dark);
+  color: var(--light);
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 999;
+  padding: 15px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.heart-icon {
+  color: var(--danger);
+  margin: 0 5px;
+}
+
+.login-footer a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-footer a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .login-card {
+    min-height: 600px;
+  }
+  
+  .form-container {
+    width: 100%;
+    left: 0;
+    transform: translateX(0);
+  }
+  
+  .login-card.signup-mode .form-container {
+    transform: translateX(0);
+  }
+  
+  .overlay-container {
+    display: none;
+  }
+}

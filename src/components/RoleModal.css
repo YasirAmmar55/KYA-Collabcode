@@ -1,0 +1,90 @@
+.role-modal {
+  background-color: var(--primary);
+  padding: 40px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  animation: slideUp 0.3s ease;
+}
+
+.role-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.logo-icon {
+  font-size: 2.5rem;
+  color: var(--secondary);
+}
+
+.role-modal-header span {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.role-modal h2 {
+  color: var(--secondary);
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+}
+
+.role-options {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.role-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 10px;
+  width: 220px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--secondary);
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+.role-card.selected {
+  border-color: var(--secondary);
+  background-color: rgba(46, 204, 113, 0.15);
+  box-shadow: 0 0 20px rgba(46, 204, 113, 0.3);
+}
+
+.role-icon {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: var(--secondary);
+}
+
+.role-card h3 {
+  margin-bottom: 15px;
+  color: var(--light);
+  font-size: 1.4rem;
+}
+
+.role-card p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}

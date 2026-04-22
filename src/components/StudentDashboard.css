@@ -1,0 +1,18 @@
+.join-room-form {
+  max-width: 400px;
+  margin: 20px 0;
+}
+
+.join-room-form .form-group {
+  margin-bottom: 20px;
+}
+
+.join-room-form input {
+  font-size: 1.2rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.join-room-form input:focus {
+  letter-spacing: 3px;
+}

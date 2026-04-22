@@ -1,0 +1,314 @@
+/* VideoPanel.css - No Speaking Effects, Only Mic Icon */
+
+.video-panel {
+  width: 280px;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  transition: width 0.3s ease;
+}
+
+.video-panel.minimized {
+  width: 50px;
+}
+
+.video-panel.minimized .panel-header h3,
+.video-panel.minimized .panel-content {
+  display: none;
+}
+
+.panel-header {
+  padding: 8px 12px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-header h3 {
+  color: var(--secondary);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.panel-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.panel-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--light);
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.panel-btn:hover {
+  background-color: rgba(46, 204, 113, 0.3);
+  color: var(--secondary);
+}
+
+.panel-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 8px;
+}
+
+/* ========== VIDEO GRID ========== */
+.video-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+/* ========== VIDEO FEED ========== */
+.video-feed {
+  min-height: 110px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.video-feed video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotateY(180deg);
+}
+
+.video-feed video.hidden {
+  display: none;
+}
+
+/* ========== NO VIDEO PLACEHOLDER ========== */
+.no-video {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  min-height: 110px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.no-video i {
+  font-size: 1.5rem;
+}
+
+.no-video span {
+  font-size: 0.7rem;
+}
+
+.empty-feed .no-video {
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.empty-feed .no-video i {
+  font-size: 1.2rem;
+}
+
+/* ========== PARTICIPANT LABEL ========== */
+.participant-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 4px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mute-icon {
+  color: #e74c3c;
+  font-size: 0.6rem;
+  margin-left: 4px;
+}
+
+/* ========== VIDEO CONTROLS ========== */
+.video-controls {
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.control-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+  transform: translateY(-1px);
+  background-color: rgba(46, 204, 113, 0.3);
+}
+
+.control-btn.muted {
+  background-color: #e74c3c;
+}
+
+.control-btn.off {
+  background-color: #e74c3c;
+}
+
+.control-btn.leave-btn {
+  background-color: #e74c3c;
+}
+
+.control-btn.leave-btn:hover {
+  background-color: #c0392b;
+}
+
+.control-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========== MINIMIZED PANEL ICONS ========== */
+.panel-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+}
+
+.panel-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.panel-icon:hover {
+  background-color: rgba(46, 204, 113, 0.3);
+  color: var(--secondary);
+}
+
+.muted-indicator {
+  color: #e74c3c;
+}
+
+/* ========== SCROLLBAR ========== */
+.video-grid::-webkit-scrollbar {
+  width: 4px;
+}
+
+.video-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.video-grid::-webkit-scrollbar-thumb {
+  background: rgba(46, 204, 113, 0.3);
+  border-radius: 4px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .video-panel {
+    width: 100%;
+    height: 320px;
+  }
+  
+  .video-grid {
+    gap: 6px;
+  }
+  
+  .video-feed {
+    min-height: 90px;
+  }
+  
+  .no-video {
+    min-height: 90px;
+  }
+}
+
+/* ========== 🆕 VIDEO FEED HOVER EFFECT ========== */
+.video-feed:hover {
+  transform: scale(1.02);
+  z-index: 10;
+  transition: transform 0.2s ease;
+}
+
+/* ========== 🆕 REMOTE VIDEO PLACEHOLDER ========== */
+.video-feed video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #1a1a2e;
+}
+
+/* ========== 🆕 PARTICIPANT COUNT BADGE ========== */
+.panel-icon span {
+  font-size: 10px;
+  background-color: var(--secondary);
+  color: var(--dark);
+  border-radius: 10px;
+  padding: 2px 4px;
+  margin-top: 2px;
+}
+
+/* ========== 🆕 VIDEO CONTROLS TOOLTIP ========== */
+.control-btn {
+  position: relative;
+}
+
+.control-btn:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  margin-bottom: 8px;
+  pointer-events: none;
+  z-index: 100;
+}
+

@@ -24,7 +24,7 @@ A real-time collaborative coding platform where developers can code, chat, and c
 ---
 
 ## 🚀 Live Demo
-https://fyp-collabcode-js.vercel.app/
+(https://kya-collabcode.vercel.app/)
 
 ---
 

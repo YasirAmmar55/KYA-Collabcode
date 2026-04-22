@@ -1,0 +1,201 @@
+.invite-modal {
+  background-color: var(--primary);
+  border-radius: 15px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: var(--danger);
+}
+
+.invite-modal-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.invite-modal-header i {
+  font-size: 3rem;
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+
+.invite-modal-header h2 {
+  color: var(--secondary);
+  font-size: 1.8rem;
+}
+
+.invite-description {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.room-code-section,
+.invite-link-section {
+  margin-bottom: 20px;
+}
+
+.room-code-section label,
+.invite-link-section label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.code-display {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.code {
+  flex: 1;
+  padding: 12px 15px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--secondary);
+  text-align: center;
+  border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.link-display {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.link-display input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--light);
+  font-size: 0.9rem;
+}
+
+.link-display input:focus {
+  outline: none;
+  border-color: var(--secondary);
+}
+
+.link-display .btn {
+  padding: 10px 15px;
+}
+
+.share-options {
+  margin: 25px 0;
+}
+
+.share-options p {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.share-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.share-btn.whatsapp {
+  background-color: #25D366;
+  color: white;
+}
+
+.share-btn.whatsapp:hover {
+  background-color: #128C7E;
+  transform: translateY(-2px);
+}
+
+.share-btn.email {
+  background-color: #EA4335;
+  color: white;
+}
+
+.share-btn.email:hover {
+  background-color: #D32F2F;
+  transform: translateY(-2px);
+}
+
+.share-btn.link {
+  background-color: var(--secondary);
+  color: var(--dark);
+}
+
+.share-btn.link:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.invite-modal-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .invite-modal {
+    padding: 20px;
+  }
+  
+  .code {
+    font-size: 1rem;
+  }
+  
+  .share-buttons {
+    flex-direction: column;
+  }
+  
+  .share-btn {
+    justify-content: center;
+  }
+}
